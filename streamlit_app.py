@@ -97,6 +97,10 @@ def main_page():
     st.sidebar.title("Navigation")
     st.sidebar.markdown("Use the options below:")
     uploaded_file = st.sidebar.file_uploader("Upload CSV File", type=["csv"])
+        if st.sidebar.button("Logout"):
+        st.session_state.authenticated = False
+        st.session_state.username = None
+        st.session_state.page = "login"  # Navigate to Login Page
 
     # Main Title
     st.title("📊Transaction Analysis and Churn Prediction")
@@ -345,13 +349,6 @@ def main_page():
             st.table(churned_customers)
             #st.write("Prediction for Sample Data:", "Churned" if prediction[0] == 1 else "Active")
 
-
-
-    # Logout Functionality
-    if st.button("Logout"):
-        st.session_state.authenticated = False
-        st.session_state.username = None
-        st.session_state.page = "login"  # Navigate to Login Page
 
 # Navigation Logic
 if st.session_state.authenticated:
