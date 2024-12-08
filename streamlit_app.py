@@ -97,7 +97,7 @@ def main_page():
     st.sidebar.title("Navigation")
     st.sidebar.markdown("Use the options below:")
     uploaded_file = st.sidebar.file_uploader("Upload CSV File", type=["csv"])
-        if st.sidebar.button("Logout"):
+    if st.sidebar.button("Logout"):
         st.session_state.authenticated = False
         st.session_state.username = None
         st.session_state.page = "login"  # Navigate to Login Page
