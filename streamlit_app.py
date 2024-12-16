@@ -320,8 +320,12 @@ def main_page():
             def churn_prediction():
                 # Load the data
                 file_path = "E-Channel Transaction Report.csv"
-                bainess = pd.read_csv(file_path, skiprows=5, usecols=range(16))
-
+                if os.path.exists(file_path):
+                    bainess = pd.read_csv(file_path, skiprows=5, usecols=range(16))
+                    st.write("File loaded successfully!")
+                else:
+                    st.error(f"File not found: {file_path}. Please upload it.")
+                    st.stop()
                 # Rename columns for easier processing
                 bainess.rename(columns={
                     'Financial Date': 'Financial_Date',
