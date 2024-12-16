@@ -440,7 +440,7 @@ def main_page():
             live_customer_features['Churn_Status'] = live_customer_features['Prediction'].apply(
                 lambda x: 'Churned' if x == 1 else 'Active')
              #import icad report
-            icad = pd.read_csv(r"C:\Users\User\Downloads\1012ICAD Report.csv" , skiprows=2 ,usecols=range(21))
+            icad = pd.read_csv("1012ICAD Report.csv", skiprows=2 ,usecols=range(21))
             #st.dataframe(icad.head())
             #needed column from the icad report
             neededicad = icad[['ACCOUNTNAME','ACCOUNTNUMBER','EMAIL','PHONENUMBER']]
