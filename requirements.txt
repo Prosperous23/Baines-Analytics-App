@@ -1,4 +1,5 @@
 streamlit
+os
 pandas
 scikit-learn
 seaborn
