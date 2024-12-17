@@ -319,8 +319,7 @@ def main_page():
 
             def churn_prediction():
                 # Load the data
-                bainess = pd.read_csv(
-                    r"C:\Users\User\OneDrive - Baines Credit Microfinance Bank\Desktop\Account Mandate\E-Channel Transaction Report.csv",
+                bainess = pd.read_csv("EE-Channel Transaction Report.csv",
                     skiprows=5, usecols=range(16))
 
                 # Rename columns for easier processing
