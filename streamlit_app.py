@@ -318,19 +318,11 @@ def main_page():
             st.markdown("### 🔮 Customer Churn Prediction")
 
             def churn_prediction():
-                # Define file path
-                file_path = "E-Channel Transaction Report.csv"
-    
-                # Check if the file exists
-                if os.path.exists(file_path):
-                    # Load the file
-                    bainess = pd.read_csv(file_path, skiprows=5, usecols=range(16))
-                    st.write("File loaded successfully!")
-                    return bainess
-                else:
-                    # Handle missing file
-                    st.error(f"File not found: {file_path}. Please upload it.")
-                    st.stop()
+                # Load the data
+                bainess = pd.read_csv(
+                    r"C:\Users\User\OneDrive - Baines Credit Microfinance Bank\Desktop\Account Mandate\E-Channel Transaction Report.csv",
+                    skiprows=5, usecols=range(16))
+
                 # Rename columns for easier processing
                 bainess.rename(columns={
                     'Financial Date': 'Financial_Date',
@@ -400,7 +392,6 @@ def main_page():
                 #st.write(classification_report(y_test, y_pred))
 
                 # Save Model Button (using Streamlit)
-                model_file_path = os.path.join(os.getcwd(), 'churn_model.pkl')  # Save model to the current directory
                 if st.button("Save Model"):
                     joblib.dump(model, 'churn_model.pkl')
                     st.success("Model saved as churn_model.pkl")
@@ -451,7 +442,7 @@ def main_page():
             live_customer_features['Churn_Status'] = live_customer_features['Prediction'].apply(
                 lambda x: 'Churned' if x == 1 else 'Active')
              #import icad report
-            icad = pd.read_csv("1012ICAD Report.csv", skiprows=2 ,usecols=range(21))
+            icad = pd.read_csv(r"C:\Users\User\Downloads\1012ICAD Report.csv" , skiprows=2 ,usecols=range(21))
             #st.dataframe(icad.head())
             #needed column from the icad report
             neededicad = icad[['ACCOUNTNAME','ACCOUNTNUMBER','EMAIL','PHONENUMBER']]
@@ -493,4 +484,3 @@ elif st.session_state.page == "signup":
     signup_page()
 else:
     login_page()
-
