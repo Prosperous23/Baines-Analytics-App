@@ -400,14 +400,15 @@ def main_page():
                 #st.write(classification_report(y_test, y_pred))
 
                 # Save Model Button (using Streamlit)
+                model_file_path = os.path.join(os.getcwd(), 'churn_model.pkl')  # Save model to the current directory
                 if st.button("Save Model"):
                     joblib.dump(model, 'churn_model.pkl')
                     st.success("Model saved as churn_model.pkl")
 
                 return model, customer_features
 
-                # Usage: To be called within a Streamlit app
-                # model, customer_features = churn_prediction()
+            # Usage: To be called within a Streamlit app
+            model, customer_features = churn_prediction()
 
             # Churn Prediction model
             #feature engineering
