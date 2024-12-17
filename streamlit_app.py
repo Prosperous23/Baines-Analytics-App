@@ -318,12 +318,17 @@ def main_page():
             st.markdown("### 🔮 Customer Churn Prediction")
 
             def churn_prediction():
-                # Load the data
+                # Define file path
                 file_path = "E-Channel Transaction Report.csv"
+    
+                # Check if the file exists
                 if os.path.exists(file_path):
+                    # Load the file
                     bainess = pd.read_csv(file_path, skiprows=5, usecols=range(16))
                     st.write("File loaded successfully!")
+                    return bainess
                 else:
+                    # Handle missing file
                     st.error(f"File not found: {file_path}. Please upload it.")
                     st.stop()
                 # Rename columns for easier processing
