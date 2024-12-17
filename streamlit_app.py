@@ -407,7 +407,7 @@ def main_page():
                 return model, customer_features
 
                 # Usage: To be called within a Streamlit app
-                model, customer_features = churn_prediction()
+                # model, customer_features = churn_prediction()
 
             # Churn Prediction model
             #feature engineering
