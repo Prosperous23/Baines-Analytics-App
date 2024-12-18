@@ -1,5 +1,5 @@
 Transaction Analysis and Churn Prediction
-A Streamlit-based application designed for transaction analysis and customer churn prediction. This project integrates user authentication, data visualization, and machine learning to help financial institutions analyze transactional data and predict customer behavior.
+An application designed for transaction analysis and customer churn prediction. This project integrates user authentication, data visualization, and machine learning to help financial institutions analyze transactional data and predict customer behavior.
 
 Features
 1. User Authentication
