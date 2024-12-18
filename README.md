@@ -1,4 +1,4 @@
-Transaction Analysis and Churn Prediction
+Transaction Analysis and Churn Prediction. 
 An application designed for transaction analysis and customer churn prediction. This project integrates user authentication, data visualization, and machine learning to help financial institutions analyze transactional data and predict customer behavior.
 
 Features
